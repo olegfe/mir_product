@@ -1,0 +1,42 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+<!--♕-->
+<p style="background-color: white; margin: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; border: groove">
+    
+       <table>
+           <tr>
+               <td>
+                    <h2><p style="margin:0px 0px 0px 50px"> {{post_1.title}}</p></h2>
+
+                    {% if post_1.image and post_1.image.url != '/media/temp.jpg' %}
+                        <center><img src="{{ post_1.image.url}}" alt=" картинка" width="800px" height="350px"/></center>
+                    {% endif  %}
+
+                    <p style="margin:0px 50px 0px 50px"> {{post_1.content|linebreaksbr}} </p> {# вывод текста по абзацам#}
+
+                    {% if user.is_authenticated %}
+                        <h3><p style="margin-left:50px">Добавить комментарий</p></h3>
+                        <form method="POST" >{% csrf_token %} {# защита от атак CSRF#}
+                        <div>
+                            {{form.as_p}}
+                          <p style="margin-left:110px"><button type="submit" class="save btn btn-default"> Отправить комментарий</p></button>
+                        </div>
+                        </form>
+                    {% else %}
+                        <h3><p style="margin-left:50px">Добавить комментарий</p></h3>
+                    {% endif %}
+                    {% for comment in comments %}<br />
+                    <h5><p style="margin-left:50px"> {{comment.date}}</p> </h5>
+                    <h5><p style="margin-left:50px"> {{comment.author}} </p></h5>
+                    <p style="margin-left:50px"> {{comment.text|linebreaksbr}} </p>
+                    {% endfor %}
+
+                    <a href="{% url 'blog' %}"><p style="margin-left:50px">Назад</p></a>
+
+               </td>
+            </tr>
+       </table>
+</p>
+<br />
+{% endblock %}

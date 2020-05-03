@@ -1,0 +1,170 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<!--♕-->
+
+<div class="container">
+    <div class="layout page">
+        <div class="layout__col-l">
+            <div class="page__cnt">
+                <h1 class="page-header">Продукция</h1>
+                <ul class="category-lst">
+                    <li class="active">
+                        <div class="category-lst__img">
+                            <a href="/ru/catalog">
+                                <img src="{% static 'app/images/1.jpg' %}">
+                                <span>
+                                    Вся продукция                                </span>
+                            </a>
+                        </div>
+                    </li>
+                                            <li>
+                            <div class="category-lst__img">
+                                <a href="/ru/catalog/Kolbasy_varenye_sosiski_i_sardelki">
+                                    <img src="{% static 'app/images/2.jpg' %}">
+                                    <span>
+                                        Колбасы вареные, сосиски и сардельки                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="category-lst__img">
+                                <a href="/ru/catalog/Kolbasy_polukopchenye_i_vareno-kopchenye">
+                                    <img src="{% static 'app/images/3.jpg' %}">
+                                    <span>
+                                        Колбасы полукопченые и варено-копченые                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="category-lst__img">
+                                <a href="/ru/catalog/kolbasa_syirokopchenaya_i_syirovyalenaya">
+                                    <img src="{% static 'app/images/4.jpg' %}">
+                                    <span>
+                                        Колбаса сырокопченая и сыровяленая                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                                            <li>
+                            <div class="category-lst__img">
+                                <a href="/ru/catalog/delikatesyi">
+                                    <img src="{% static 'app/images/5.jpg' %}">
+                                    <span>
+                                        Деликатесы                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                                    </ul>
+                <div class="filter">
+                    <form action="" method="get" class="search-form">        <div class="filter__l">
+                        <input type="text" name="word" placeholder="Поиск по названию товара" value="">            <button class="form-search-button" type="submit"></button>
+                 </div>
+                <div class="filter__r">
+            <span>Сортировка</span>
+            <select name="alphabet" class="action-filter form-control"><option value="">Без сортировки</option>
+            <option value="1">По алфавиту А-Я</option>
+            <option value="2">По алфавиту Я-А</option></select>                                    <label><span>Товаров на странице</span><select name="pagination" class="action-filter form-control"><option value="8">8</option>
+            <option value="16">16</option>
+            <option value="32">32</option></select></label>        </div>
+                </form></div>
+
+
+            <div class="products-lst">
+                    <ul>
+                                    <li>
+                            <div class="products-lst__img">
+                                <a href="/ru/product/kolbasa-varenaya-vyisshego-sorta-firmennaya-so-shpikom-" title="КОЛБАСА ВАРЕНАЯ ВЫСШЕГО СОРТА " ФИРМЕННАЯ="" СО="" ШПИКОМ""="">
+                                    <img src="{% static 'app/images/11.jpg' %}">
+                                </a>
+                            </div>
+                            <div class="products-lst__cnt">
+                                <a class="products-lst__a" href="/ru/product/kolbasa-varenaya-vyisshego-sorta-firmennaya-so-shpikom-" title="КОЛБАСА ВАРЕНАЯ ВЫСШЕГО СОРТА " ФИРМЕННАЯ="" СО="" ШПИКОМ""="">
+                                    КОЛБАСА ВАРЕНАЯ ВЫСШЕГО СОРТА "ФИРМЕННАЯ СО ШПИКОМ"                    </a>
+                            </div>
+                        </li>
+                                    <li>
+                            <div class="products-lst__img">
+                                <a href="/ru/product/kolbasa-varenaya-pervogo-sorta-martadella" title="КОЛБАСА ВАРЕНАЯ ПЕРВОГО СОРТА " МАРТАДЕЛЛА""="">
+                                    <img src="{% static 'app/images/12.jpg' %}">
+                                </a>
+                            </div>
+                            <div class="products-lst__cnt">
+                                <a class="products-lst__a" href="/ru/product/kolbasa-varenaya-pervogo-sorta-martadella" title="КОЛБАСА ВАРЕНАЯ ПЕРВОГО СОРТА " МАРТАДЕЛЛА""="">
+                                    КОЛБАСА ВАРЕНАЯ ПЕРВОГО СОРТА "МАРТАДЕЛЛА"                    </a>
+                            </div>
+                        </li>
+                                    <li>
+                            <div class="products-lst__img">
+                                <a href="/ru/product/kolbasa-syirovyalenaya-pervogo-sorta-yubileynaya-dstu" title="КОЛБАСА СЫРОВЯЛЕНАЯ ПЕРВОГО СОРТА " ЮБИЛЕЙНАЯ"="" ДСТУ"="">
+                                    <img src="{% static 'app/images/13.jpg' %}">
+                                </a>
+                            </div>
+                            <div class="products-lst__cnt">
+                                <a class="products-lst__a" href="/ru/product/kolbasa-syirovyalenaya-pervogo-sorta-yubileynaya-dstu" title="КОЛБАСА СЫРОВЯЛЕНАЯ ПЕРВОГО СОРТА " ЮБИЛЕЙНАЯ"="" ДСТУ"="">
+                                    КОЛБАСА СЫРОВЯЛЕНАЯ ПЕРВОГО СОРТА "ЮБИЛЕЙНАЯ" ДСТУ                    </a>
+                            </div>
+                        </li>
+                                    <li>
+                            <div class="products-lst__img">
+                                <a href="/ru/product/kolbasa-syirokopchenaya-vyisshego-sorta-moskovskaya-dstu" title="КОЛБАСА СЫРОКОПЧЕНАЯ ВЫСШЕГО СОРТА " МОСКОВСКАЯ"="" ДСТУ"="">
+                                    <img src="{% static 'app/images/14.jpg' %}">
+                                </a>
+                            </div>
+                            <div class="products-lst__cnt">
+                                <a class="products-lst__a" href="/ru/product/kolbasa-syirokopchenaya-vyisshego-sorta-moskovskaya-dstu" title="КОЛБАСА СЫРОКОПЧЕНАЯ ВЫСШЕГО СОРТА " МОСКОВСКАЯ"="" ДСТУ"="">
+                                    КОЛБАСА СЫРОКОПЧЕНАЯ ВЫСШЕГО СОРТА "МОСКОВСКАЯ" ДСТУ                    </a>
+                            </div>
+                        </li>
+                                    <li>
+                            <div class="products-lst__img">
+                                <a href="/ru/product/kolbasa-polukopchenaya-vyisshego-sorta-servelat-dstu" title="КОЛБАСА ПОЛУКОПЧЕНАЯ ВЫСШЕГО СОРТА " СЕРВЕЛАТ"="" ДСТУ"="">
+                                    <img src="{% static 'app/images/15.jpg' %}">
+                                </a>
+                            </div>
+                            <div class="products-lst__cnt">
+                                <a class="products-lst__a" href="/ru/product/kolbasa-polukopchenaya-vyisshego-sorta-servelat-dstu" title="КОЛБАСА ПОЛУКОПЧЕНАЯ ВЫСШЕГО СОРТА " СЕРВЕЛАТ"="" ДСТУ"="">
+                                    КОЛБАСА ПОЛУКОПЧЕНАЯ ВЫСШЕГО СОРТА "СЕРВЕЛАТ" ДСТУ                    </a>
+                            </div>
+                        </li>
+                                    <li>
+                            <div class="products-lst__img">
+                                <a href="/ru/product/kolbasa-polukopchenaya-pervogo-sorta-balyikovaya" title="КОЛБАСА ПОЛУКОПЧЕНАЯ ПЕРВОГО СОРТА " БАЛЫКОВАЯ""="">
+                                    <img src="{% static 'app/images/12.jpg' %}">
+                                </a>
+                            </div>
+                            <div class="products-lst__cnt">
+                                <a class="products-lst__a" href="/ru/product/kolbasa-polukopchenaya-pervogo-sorta-balyikovaya" title="КОЛБАСА ПОЛУКОПЧЕНАЯ ПЕРВОГО СОРТА " БАЛЫКОВАЯ""="">
+                                    КОЛБАСА ПОЛУКОПЧЕНАЯ ПЕРВОГО СОРТА "БАЛЫКОВАЯ"                    </a>
+                            </div>
+                        </li>
+                                    <li>
+                            <div class="products-lst__img">
+                                <a href="/ru/product/kolbasa-polukopchenaya-pervogo-sorta-salyami-potemkinskaya" title="КОЛБАСА ПОЛУКОПЧЕНАЯ ПЕРВОГО СОРТА " САЛЯМИ="" ПОТЁМКИНСКАЯ""="">
+                                    <img src="{% static 'app/images/16.jpg' %}">
+                                </a>
+                            </div>
+                            <div class="products-lst__cnt">
+                                <a class="products-lst__a" href="/ru/product/kolbasa-polukopchenaya-pervogo-sorta-salyami-potemkinskaya" title="КОЛБАСА ПОЛУКОПЧЕНАЯ ПЕРВОГО СОРТА " САЛЯМИ="" ПОТЁМКИНСКАЯ""="">
+                                    КОЛБАСА ПОЛУКОПЧЕНАЯ ПЕРВОГО СОРТА "САЛЯМИ ПОТЁМКИНСКАЯ"                    </a>
+                            </div>
+                        </li>
+                                    <li>
+                            <div class="products-lst__img">
+                                <a href="/ru/product/sardelki-pervogo-sorta-karapuz" title="САРДЕЛЬКИ ПЕРВОГО СОРТА " КАРАПУЗ""="">
+                                    <img src="{% static 'app/images/17.jpg' %}">
+                                </a>
+                            </div>
+                            <div class="products-lst__cnt">
+                                <a class="products-lst__a" href="/ru/product/sardelki-pervogo-sorta-karapuz" title="САРДЕЛЬКИ ПЕРВОГО СОРТА " КАРАПУЗ""="">
+                                    САРДЕЛЬКИ ПЕРВОГО СОРТА "КАРАПУЗ"                    </a>
+                            </div>
+                        </li>
+                                    
+                                </ul>
+            </div>
+
+
+   
+
+{% endblock %}

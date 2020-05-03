@@ -1,0 +1,29 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<!--♕-->
+<br />
+<br />
+
+<form method ="POST"  enctype="multipart/form-data">
+     {% csrf_token %}
+     {{ form.as_p }}
+
+    <div class="video1">
+        <h1><p style="margin: 0px 0px 0px 520px"></p></h1>
+        <p style="margin: 0px 0px 0px 150px"><video src="{% static 'app/images/101.mp4' %}" controls="controls" width="880" height="500" poster="/media/best.jpg" ></video></p>
+    </div></p>
+<br />
+    <br />
+    <div class="video2">
+        <h2><p style="margin: 0px 0px 0px 440px"></p></h2>
+        <p style="margin: 0px 0px 0px 150px"><video src="{% static 'app/images/102.mp4' %}" controls="controls"  width="880" height="500" poster="/media/top.jpg" ></video></p>
+
+    </div>
+
+</form>
+<br />
+
+
+{% endblock %}

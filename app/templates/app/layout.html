@@ -1,0 +1,93 @@
+﻿<!--♕-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} -Мир- продукт</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand"> <img src="{% static 'app/content/000.png ' %}" width="40" alt="logo" /> </a></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Главное</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                    <li><a href="{% url 'product' %}">Продукты</a></li>
+                    <li><a href="{% url 'contact' %}">Контакты</a></li>
+                     {% if not user.is_authenticated %}
+                    <li><a href="{% url 'registration' %}">Регистрация</a></li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'zayafka' %}">Обратная связь</a></li>
+                    {% endif %}
+
+                    <li><a href="{% url 'blog' %}">Блог</a></li>
+                    <li><a href="{% url 'videopost' %}">Видео</a></li>
+                    {% if user.is_superuser  %}
+                    <li><a href="{% url 'newpost' %}">Добавить статей</a></li>
+                    {% endif %}
+
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+   
+    <div class="container body-content">
+{% block content %}{% endblock %}
+     
+        <div class="footer">
+           <ul class="nav-pages-bottom">
+                <li class="active">
+                    <a title="Главная" href="/ru">Главная |</a>
+                </li>
+                <li class="active">
+                    <a id="menu-1" title="Продукция" class="catalog" href="/ru/catalog">Продукция |</a>
+                </li>
+                <li class="active">
+                    <a id="menu-2" title="О компании" class="o-kompanii" href="/ru/o-kompanii">О компании |</a>
+                </li >
+                <li class="active">
+                    <a id="menu-3" title="Вакансии" class="vakansii" href="/ru/vakansii">Вакансии |</a>
+                </li>
+                <li class="active">
+                    <a id="menu-4" title="Новости" class="news" href="/ru/news">Новости |</a>
+                </li>
+                <li class="active">
+                    <a id="menu-5" title="Акции" class="shares" href="/ru/shares">Акции |</a>
+                </li>
+                <li class="active">
+                    <a id="menu-6" title="Закупки" class="zakupki" href="/ru/zakupki">Закупки |</a>
+                </li>
+                <li class="active">
+                    <a id="menu-7" title="Сотрудничество" class="sotrudnichestvo" href="/ru/sotrudnichestvo">Сотрудничество |</a>
+                </li>
+                <li class="active">
+                    <a id="menu-8" title="Контакты" class="contacts" href="/ru/contacts">Контакты |</a>
+                </li>
+            </ul>
+            <p>&copy; {{ year }} - Мир-продукт </p>
+        </div>
+    </div>
+
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

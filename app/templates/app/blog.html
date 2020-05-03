@@ -1,0 +1,23 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<!--♕-->
+<p style="background-color: white; margin: 50px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; border: groove">
+    
+       <table>
+           <tr>
+               <td>
+                    {% for post in posts %}
+                    <hr/>
+                    <div <p style="margin:0px 0px 0px 50px">
+                    <h2> {{post.title}} </h2>
+                      {{post.posted}} 
+                    <a href="{% url 'blogpost' parametr=post.id %}">{{ post.description }}</a> 
+                    </div>
+                    {% endfor %}
+              </td>
+          </tr>
+       </table>
+</p>
+{% endblock %}

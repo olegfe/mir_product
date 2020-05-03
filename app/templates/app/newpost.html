@@ -1,0 +1,33 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<!--♕-->
+     <center><p style=" margin: 50px; background-color: white; border: groove; width: 606px">
+       <table>
+       <tr>
+            <td>
+
+                <h3>Добавить Статья</h3>
+            <br />
+                 <form method="post"><br />
+         
+                   {% csrf_token %} 
+        
+                       {{ form.as_p }}<br />
+                        <button type="submit" class="save btn btn-default" >Сохранить статью</button>
+     
+                </form>
+       </td> </tr></table></p></center>
+<br />
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+﻿{% extends "app/layout.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<!--♕-->
+
+   <center><p style=" margin: 50px; background-color: white; border: groove; width: 680px">
+       <table>
+       <tr>
+            <td>
+
+                {% if form != None %}
+                <h2><span>Отправьте пожалуйста заполненную форму</span></h2>
+                    <br />
+                    <div>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <label for="{{ form.name.id_for_label }}">{{ form.name.label}}:</label>
+                            {{form.name }} <br /><br />
+                            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}:</label>
+                            {{ form.email }} <br /><br />
+                            <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}:</label>
+                            {{ form.phone }} <br /><br />
+                            <label for="{{ form.message.id_for_label }}">{{ form.message.label }}:</label>
+                            {{ form.message }} <br /><br />
+                            <input class="btn btn-default" type="submit" value="Отправить">
+                        </form>
+                    </div>
+                {% else %}
+                <br /><br />
+
+                <h2>Благодарим за предоставленную информацию!</h2>
+                
+                <h3>Вы сообщили о себе следующее:</h3>
+                    <ul>
+                        <li><span> Ваше имя :</span> {{ data.name }}</li>
+                        <li><span> Ваш email :</span>{{ data.email }}</li>
+                        <li><span> Ваш телефон :</span>{{ data.phone }}</li>
+                        <li><span> Текст сообщения :</span>{{ data.message }}</li>
+                    </ul>
+                {% endif %}
+        </td> </tr></table></p></center>
+{% endblock %}
+
+
+
+
